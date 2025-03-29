@@ -4,6 +4,8 @@
  */
 package ijse.mvc.customer;
 
+import ijse.mvc.customer.View.CustomerView;
+
 /**
  *
  * @author gihan5323
@@ -14,6 +16,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        new CustomerView().setVisible(true);
         // TODO code application logic here
     }
     

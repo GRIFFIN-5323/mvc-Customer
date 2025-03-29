@@ -160,6 +160,11 @@ public class CustomerDto {
     public void setPostelCode(String postelCode) {
         this.postelCode = postelCode;
     }
+
+    @Override
+    public String toString() {
+        return "CustomerDto{" + "custId=" + custId + ", cusTitle=" + cusTitle + ", custName=" + custName + ", dob=" + dob + ", salary=" + salary + ", custAddress=" + custAddress + ", city=" + city + ", province=" + province + ", postelCode=" + postelCode + '}';
+    }
     
     
     
