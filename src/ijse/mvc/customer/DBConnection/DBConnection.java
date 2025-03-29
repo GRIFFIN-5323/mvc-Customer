@@ -4,10 +4,39 @@
  */
 package ijse.mvc.customer.DBConnection;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
 /**
  *
  * @author gihan5323
  */
 public class DBConnection {
+    
+    private static DBConnection dbConnection;
+    private Connection connection;
+    
+    private DBConnection()throws ClassNotFoundException,SQLException{
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/Supermarket","root","mysql");
+    }
+    
+    
+    
+    public DBConnection getInstance() throws ClassNotFoundException,SQLException{
+        if(dbConnection==null){
+            DBConnection dbConnection=new DBConnection();
+        }
+        
+        return dbConnection;
+        
+        
+    }
+    
+    public Connection getConnection(){
+       return this.connection;
+    }
     
 }
